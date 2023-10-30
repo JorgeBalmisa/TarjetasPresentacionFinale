@@ -46,7 +46,7 @@ class MainActivity : ComponentActivity() {
                         infoPersona = "Top Laner",
                         gifPersona = painterResource(id = R.drawable.mad_lionslogo_profile),
                         info1 = "informacion1",
-                        info2 = "informacion2",
+                        info2 = "informacion22",
                         info3 = "informacion33"
                     ),
                     Tarjeta(

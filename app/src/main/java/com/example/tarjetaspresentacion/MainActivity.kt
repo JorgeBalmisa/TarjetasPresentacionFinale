@@ -45,45 +45,50 @@ class MainActivity : ComponentActivity() {
                         nombrePersona = "Chasy",
                         infoPersona = "Top Laner",
                         gifPersona = painterResource(id = R.drawable.mad_lionslogo_profile),
-                        info1 = "informacion1",
-                        info2 = "informacion22",
-                        info3 = "informacion33"
+                        nacionPersona = painterResource(id = R.drawable.peepo),
+                        info1 = "Coreano",
+                        info2 = "Nombre real: Kim Dong-hyeon",
+                        info3 = "Ganancias totales: $47,964"
                     ),
                     Tarjeta(
                         imagenPersona = painterResource(id = R.drawable.elyoya),
                         nombrePersona = "Elyoya",
                         infoPersona = "Jungler",
                         gifPersona = painterResource(id = R.drawable.mad_lionslogo_profile),
-                        info1 = "informacion1",
-                        info2 = "informacion2",
-                        info3 = "informacion3"
+                        nacionPersona = painterResource(id = R.drawable.peepo),
+                        info1 = "Español",
+                        info2 = "Nombre real: Javier Prades",
+                        info3 = "Ganancias totales: $113,326"
                     ),
                     Tarjeta(
                         imagenPersona = painterResource(id = R.drawable.nisqy),
                         nombrePersona = "Nisqy",
                         infoPersona = "Midlaner",
                         gifPersona = painterResource(id = R.drawable.mad_lionslogo_profile),
-                        info1 = "informacion1",
-                        info2 = "informacion2",
-                        info3 = "informacion3"
+                        nacionPersona = painterResource(id = R.drawable.peepo),
+                        info1 = "Belga",
+                        info2 = "Nombre real: Yasin Dinçer",
+                        info3 = "Ganancias totales: $126,027"
                     ),
                     Tarjeta(
                         imagenPersona = painterResource(id = R.drawable.carzzy),
                         nombrePersona = "Carzzy",
                         infoPersona = "Bot Laner",
                         gifPersona = painterResource(id = R.drawable.mad_lionslogo_profile),
-                        info1 = "informacion1",
-                        info2 = "informacion2",
-                        info3 = "informacion3"
+                        nacionPersona = painterResource(id = R.drawable.peepo),
+                        info1 = "Checo",
+                        info2 = "Nombre real: Matyas Orság",
+                        info3 = "Ganancias totales: $125,876"
                     ),
                     Tarjeta(
                         imagenPersona = painterResource(id = R.drawable.hylissang),
                         nombrePersona = "Hylissang",
                         infoPersona = "Support",
                         gifPersona = painterResource(id = R.drawable.mad_lionslogo_profile),
-                        info1 = "informacion1",
-                        info2 = "informacion2",
-                        info3 = "informacion3t"
+                        nacionPersona = painterResource(id = R.drawable.peepo),
+                        info1 = "Búlgaro",
+                        info2 = "Nombre real: Zdravets Iliev Galabov",
+                        info3 = "Ganancias totales: 398,326"
                     ),
 
                 )
@@ -115,6 +120,7 @@ class MainActivity : ComponentActivity() {
                     nombrePersona = tarjetas[currentIndex].nombrePersona,
                     infoPersona = tarjetas[currentIndex].infoPersona,
                     gifPersona = tarjetas[currentIndex].gifPersona,
+                    nacionPersona = tarjetas[currentIndex].nacionPersona,
                     info1 = tarjetas[currentIndex].info1,
                     info2 = tarjetas[currentIndex].info2,
                     info3 = tarjetas[currentIndex].info3,
@@ -133,6 +139,7 @@ data class Tarjeta(
     val nombrePersona: String,
     val infoPersona: String,
     val gifPersona: Painter,
+    val nacionPersona : Painter,
     val info1: String,
     val info2: String,
     val info3: String
@@ -145,6 +152,7 @@ data class Tarjeta(
         nombrePersona: String,
         infoPersona: String,
         gifPersona: Painter,
+        nacionPersona : Painter,
         info1: String,
         info2: String,
         info3: String,
@@ -187,26 +195,37 @@ data class Tarjeta(
                 textAlign = TextAlign.Center,
             )
 
-            Text(
-                text = info1,
-                fontSize = 16.sp,
-                modifier = modifier.padding(16.dp),
-                textAlign = TextAlign.Center,
-            )
+            Row(modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.Center ) {
+                Image(painter = nacionPersona,
+                    contentDescription = null,
+                    modifier = Modifier
+                        .size(40.dp)
+                        .padding(top=10.dp),
 
-            Text(
-                text = info2,
-                fontSize = 16.sp,
-                modifier = modifier.padding(16.dp),
-                textAlign = TextAlign.Center,
-            )
 
-            Text(
-                text = info3,
-                fontSize = 16.sp,
-                modifier = modifier.padding(16.dp),
-                textAlign = TextAlign.Center,
-            )
+                )
+                Text(
+                    text = info1,
+                    fontSize = 16.sp,
+                    modifier = modifier.padding(20.dp),
+                    textAlign = TextAlign.Center,
+                )
+            }
+                Text(
+                    text = info2,
+                    fontSize = 16.sp,
+                    modifier = modifier.padding(20.dp),
+                    textAlign = TextAlign.Center,
+                )
+
+                Text(
+                    text = info3,
+                    fontSize = 16.sp,
+                    modifier = modifier.padding(20.dp),
+                    textAlign = TextAlign.Center,
+                )
+
             Spacer(modifier = Modifier.height(16.dp))
 
             Row(modifier = Modifier.fillMaxWidth()) {
@@ -254,6 +273,7 @@ fun GreetingPreview() {
                 nombrePersona = "Alexelcapo",
                 infoPersona = "Streamer",
                 gifPersona = painterResource(id = R.drawable.gif2),
+                nacionPersona = painterResource(id = R.drawable.peepo),
                 info1 = "informacion1",
                 info2 = "informacion2",
                 info3 = "informacion3"
@@ -264,6 +284,7 @@ fun GreetingPreview() {
                 nombrePersona = "UwU",
                 infoPersona = "Streamer",
                 gifPersona = painterResource(id = R.drawable.gif1),
+                nacionPersona = painterResource(id = R.drawable.peepo),
                 info1 = "informacion1",
                 info2 = "informacion2",
                 info3 = "informacion3"
@@ -299,6 +320,7 @@ fun GreetingPreview() {
             nombrePersona = tarjetas[currentIndex].nombrePersona,
             infoPersona = tarjetas[currentIndex].infoPersona,
             gifPersona = tarjetas[currentIndex].gifPersona,
+            nacionPersona = tarjetas[currentIndex].nacionPersona,
             info1 = tarjetas[currentIndex].info1,
             info2 = tarjetas[currentIndex].info2,
             info3 = tarjetas[currentIndex].info3,
